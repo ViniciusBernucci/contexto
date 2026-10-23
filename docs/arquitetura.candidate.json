@@ -1,0 +1,234 @@
+{
+  "schema_version": 1,
+  "diagram_type": "architecture",
+  "meta": {
+    "title": "Contexto — arquitetura local",
+    "locale": "pt-BR",
+    "quality_profile": "showcase",
+    "output": "docs/arquitetura.html"
+  },
+  "components": [
+    {
+      "id": "agente",
+      "type": "external",
+      "label": "Agente / terminal",
+      "sublabel": "Raiz explícita",
+      "pos": [
+        40,
+        180
+      ],
+      "size": [
+        140,
+        70
+      ]
+    },
+    {
+      "id": "interfaces",
+      "type": "backend",
+      "label": "CLI e MCP",
+      "sublabel": "Node 22.13+",
+      "pos": [
+        290,
+        180
+      ],
+      "size": [
+        140,
+        70
+      ]
+    },
+    {
+      "id": "nucleo",
+      "type": "backend",
+      "label": "Contexto e estado",
+      "sublabel": "Busca, pacotes, eventos",
+      "pos": [
+        560,
+        180
+      ],
+      "size": [
+        160,
+        70
+      ]
+    },
+    {
+      "id": "sqlite",
+      "type": "database",
+      "label": "SQLite / FTS5",
+      "sublabel": "Índice, tarefas e eventos",
+      "pos": [
+        870,
+        180
+      ],
+      "size": [
+        160,
+        70
+      ]
+    },
+    {
+      "id": "fontes",
+      "type": "database",
+      "label": "Fontes do projeto",
+      "sublabel": "Allowlist e hashes",
+      "pos": [
+        560,
+        40
+      ],
+      "size": [
+        160,
+        70
+      ]
+    },
+    {
+      "id": "captura",
+      "type": "backend",
+      "label": "Captura CLI",
+      "sublabel": "Limite e saneamento",
+      "pos": [
+        560,
+        380
+      ],
+      "size": [
+        160,
+        70
+      ]
+    },
+    {
+      "id": "logs",
+      "type": "database",
+      "label": "Logs locais",
+      "sublabel": "Conteúdo saneado",
+      "pos": [
+        560,
+        560
+      ],
+      "size": [
+        160,
+        70
+      ]
+    },
+    {
+      "id": "gitcomum",
+      "type": "database",
+      "label": "Git comum",
+      "sublabel": "Modelo e hook local",
+      "pos": [
+        290,
+        40
+      ],
+      "size": [
+        160,
+        70
+      ]
+    },
+    {
+      "id": "eficiencia",
+      "type": "backend",
+      "label": "Eficiência",
+      "sublabel": "Relatório e sugestões",
+      "pos": [
+        870,
+        380
+      ],
+      "size": [
+        160,
+        70
+      ]
+    }
+  ],
+  "connections": [
+    {
+      "id": "aciona",
+      "from": "agente",
+      "to": "interfaces",
+      "label": "chamada"
+    },
+    {
+      "id": "consulta",
+      "from": "interfaces",
+      "to": "nucleo",
+      "label": "operação"
+    },
+    {
+      "id": "persistencia",
+      "from": "nucleo",
+      "to": "sqlite",
+      "label": "transações"
+    },
+    {
+      "id": "leitura",
+      "from": "nucleo",
+      "to": "fontes",
+      "label": "confere fonte"
+    },
+    {
+      "id": "executa",
+      "from": "interfaces",
+      "to": "captura",
+      "label": "CLI: comando"
+    },
+    {
+      "id": "log",
+      "from": "captura",
+      "to": "logs",
+      "label": "grava log"
+    },
+    {
+      "id": "metadados",
+      "from": "captura",
+      "to": "sqlite",
+      "label": "metadados"
+    },
+    {
+      "id": "registro",
+      "from": "interfaces",
+      "to": "gitcomum",
+      "label": "setup / ensure"
+    },
+    {
+      "id": "medicao",
+      "from": "sqlite",
+      "to": "eficiencia",
+      "label": "bytes e contadores"
+    }
+  ],
+  "cards": [
+    {
+      "dot": "cyan",
+      "title": "Recuperação econômica",
+      "items": [
+        "Indexação por hash e busca textual BM25",
+        "Pacotes por papel com limite em bytes UTF-8",
+        "Detalhes são recuperados por referência"
+      ]
+    },
+    {
+      "dot": "emerald",
+      "title": "Coordenação verificável",
+      "items": [
+        "Eventos idempotentes e revisão esperada",
+        "Gates vinculados a fontes e evidências",
+        "Estado Markdown é projeção do SQLite"
+      ]
+    },
+    {
+      "dot": "rose",
+      "title": "Limites",
+      "items": [
+        "Sem rede, modelos ou dependências npm",
+        "MCP consulta; shell e eventos ficam na CLI",
+        "Captura não é sandbox; permissões pertencem ao cliente",
+        "Descrição da distribuição local; controles podem estar em inglês"
+      ]
+    },
+    {
+      "dot": "amber",
+      "title": "Worktrees e medição",
+      "items": [
+        "Configuração herdada; dados isolados por worktree",
+        "Hook compatível e ensure obrigatório no criador/agente",
+        "Bytes observados e tokens estimados separados dos contadores importados",
+        "Sugestões locais determinísticas, sem consumo de modelo"
+      ]
+    }
+  ]
+}

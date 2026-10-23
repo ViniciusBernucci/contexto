@@ -1,0 +1,10 @@
+# Runtime data belongs to each project, never to the distributable package.
+/.contexto/
+/node_modules/
+/coverage/
+*.sqlite
+*.sqlite-wal
+*.sqlite-shm
+*.db
+*.log
+.DS_Store

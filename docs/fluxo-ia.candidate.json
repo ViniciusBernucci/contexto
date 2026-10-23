@@ -1,0 +1,295 @@
+{
+  "schema_version": 2,
+  "diagram_type": "workflow",
+  "meta": {
+    "title": "Fluxo de IA — contexto por etapa e risco",
+    "locale": "pt-BR",
+    "quality_profile": "showcase",
+    "output": "docs/fluxo-ia.html"
+  },
+  "lanes": [
+    {
+      "id": "planejamento",
+      "label": "Planejamento"
+    },
+    {
+      "id": "preparacao",
+      "label": "Contexto automático"
+    },
+    {
+      "id": "execucao",
+      "label": "Execução e gates"
+    },
+    {
+      "id": "recuperacao",
+      "label": "Correção e bloqueio",
+      "variant": "exception"
+    },
+    {
+      "id": "entrega",
+      "label": "Integração e entrega"
+    }
+  ],
+  "mainPath": [
+    "prepara",
+    "implementa",
+    "review",
+    "audita",
+    "qa",
+    "integra",
+    "validacao",
+    "pacote"
+  ],
+  "nodes": [
+    {
+      "id": "demanda",
+      "lane": "planejamento",
+      "col": 0,
+      "type": "external",
+      "label": "Demanda",
+      "sublabel": "Regras do projeto"
+    },
+    {
+      "id": "entrevista",
+      "lane": "planejamento",
+      "col": 1,
+      "type": "backend",
+      "label": "Entrevista",
+      "sublabel": "Só lacunas essenciais"
+    },
+    {
+      "id": "ticket",
+      "lane": "planejamento",
+      "col": 2,
+      "type": "security",
+      "label": "Ticket e risco",
+      "sublabel": "Simples / padrão / crítico"
+    },
+    {
+      "id": "manifesto",
+      "lane": "planejamento",
+      "col": 3,
+      "type": "database",
+      "label": "Plano único",
+      "sublabel": "Critérios e dependências"
+    },
+    {
+      "id": "autoriza",
+      "lane": "planejamento",
+      "col": 4,
+      "type": "external",
+      "label": "Pedido de execução",
+      "sublabel": "Aciona orquestrador"
+    },
+    {
+      "id": "implementa",
+      "lane": "execucao",
+      "col": 0,
+      "type": "backend",
+      "label": "Implementação",
+      "sublabel": "Pacote por tarefa"
+    },
+    {
+      "id": "review",
+      "lane": "execucao",
+      "col": 1,
+      "type": "security",
+      "label": "Review independente",
+      "sublabel": "Uma cobertura do escopo"
+    },
+    {
+      "id": "audita",
+      "lane": "execucao",
+      "col": 2,
+      "type": "security",
+      "label": "Auditoria condicional",
+      "sublabel": "Achados ou crítico"
+    },
+    {
+      "id": "qa",
+      "lane": "execucao",
+      "col": 3,
+      "type": "security",
+      "label": "QA por perfil",
+      "sublabel": "Critérios demonstrados"
+    },
+    {
+      "id": "correcao",
+      "lane": "recuperacao",
+      "col": 2,
+      "type": "backend",
+      "label": "Correção focal",
+      "sublabel": "IDs e impacto"
+    },
+    {
+      "id": "isolamento",
+      "lane": "recuperacao",
+      "col": 4,
+      "type": "security",
+      "label": "Isolar tarefa",
+      "sublabel": "Falha essencial / limite"
+    },
+    {
+      "id": "integra",
+      "lane": "entrega",
+      "col": 3,
+      "type": "backend",
+      "label": "Integração local",
+      "sublabel": "Gates e dependências OK"
+    },
+    {
+      "id": "validacao",
+      "lane": "entrega",
+      "col": 4,
+      "type": "security",
+      "label": "Validar combinação",
+      "sublabel": "Interações afetadas"
+    },
+    {
+      "id": "pacote",
+      "lane": "entrega",
+      "col": 5,
+      "type": "external",
+      "label": "Revisão humana",
+      "sublabel": "Pacote e limpeza real"
+    },
+    {
+      "id": "prepara",
+      "lane": "preparacao",
+      "col": 0,
+      "type": "backend",
+      "label": "Preparar worktree",
+      "sublabel": "ensure automático"
+    }
+  ],
+  "edges": [
+    {
+      "from": "demanda",
+      "to": "entrevista"
+    },
+    {
+      "from": "entrevista",
+      "to": "ticket"
+    },
+    {
+      "from": "ticket",
+      "to": "manifesto"
+    },
+    {
+      "from": "manifesto",
+      "to": "autoriza"
+    },
+    {
+      "from": "autoriza",
+      "to": "prepara",
+      "label": "executar"
+    },
+    {
+      "from": "implementa",
+      "to": "review"
+    },
+    {
+      "from": "review",
+      "to": "audita",
+      "label": "se exigida"
+    },
+    {
+      "from": "review",
+      "to": "qa",
+      "label": "sem achados: não crítico",
+      "role": "branch"
+    },
+    {
+      "from": "audita",
+      "to": "qa",
+      "label": "liberado"
+    },
+    {
+      "from": "audita",
+      "to": "correcao",
+      "label": "APLICAR",
+      "role": "branch"
+    },
+    {
+      "from": "qa",
+      "to": "correcao",
+      "label": "FAIL",
+      "role": "error"
+    },
+    {
+      "from": "correcao",
+      "to": "review",
+      "label": "revalidar",
+      "role": "return"
+    },
+    {
+      "from": "qa",
+      "to": "integra",
+      "label": "PASS / coberto"
+    },
+    {
+      "from": "correcao",
+      "to": "isolamento",
+      "label": "3 rodadas / bloqueio",
+      "role": "error"
+    },
+    {
+      "from": "integra",
+      "to": "validacao"
+    },
+    {
+      "from": "validacao",
+      "to": "correcao",
+      "label": "falha no escopo",
+      "role": "return"
+    },
+    {
+      "from": "validacao",
+      "to": "pacote",
+      "label": "aprovado"
+    },
+    {
+      "from": "isolamento",
+      "to": "pacote",
+      "label": "pacote com bloqueios",
+      "role": "branch"
+    },
+    {
+      "from": "prepara",
+      "to": "implementa",
+      "label": "prepared: true"
+    }
+  ],
+  "cards": [
+    {
+      "dot": "cyan",
+      "title": "Configuração por projeto",
+      "items": [
+        "Regras locais e workflow definem caminhos e convenções",
+        "Uma especificação; prompts e relatórios por referência",
+        "Contexto mantém estado, busca e logs sem aprovar por conta própria",
+        "Cada worktree herda configuração e cria seu próprio banco"
+      ]
+    },
+    {
+      "dot": "amber",
+      "title": "Gates proporcionais",
+      "items": [
+        "Simples: QA pode ser coberto pelo review independente com evidência completa",
+        "Padrão: QA independente; auditoria se houver achados",
+        "Crítico: auditoria mesmo sem achados e QA independente",
+        "Sem critério essencial demonstrado não existe aprovação"
+      ]
+    },
+    {
+      "dot": "rose",
+      "title": "Proteções preservadas",
+      "items": [
+        "Limite de três rodadas técnicas e três de QA por tarefa",
+        "Bloqueio isola dependentes; tarefas independentes continuam",
+        "Git de escrita em main, push e PR não são automáticos",
+        "Métricas locais e comparação de contadores; economia total exige baseline equivalente"
+      ]
+    }
+  ]
+}
