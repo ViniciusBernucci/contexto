@@ -90,3 +90,7 @@ node --test tests/*.test.mjs
 ```
 
 Os testes usam pastas temporárias e repositórios fictícios. Os exemplos Git exigem identidade de commit já configurada pelo desenvolvedor; a ferramenta não altera `user.name`/`user.email`. Escolha uma licença antes de publicar sua distribuição. Este pacote não inclui dados operacionais de nenhum projeto.
+
+## Tutorial de instalação na VPS
+
+Veja o [passo a passo para VPS com backend e frontend](tutorial_install_vps.md), com terminal remoto, runtime separado e configuração automática das worktrees.

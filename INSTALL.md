@@ -159,3 +159,7 @@ Para desativar o hook, compare o hash em `contexto/hook.json` com o hook atual, 
 | Métrica antiga excluída | Registros anteriores sem prova de captura completa ficam fora da redução |
 
 O programa não realiza envio de telemetria. Nenhum percentual de redução é garantido: meça no seu trabalho e confira também qualidade e retrabalho.
+
+## Tutorial de instalação na VPS
+
+Veja o [passo a passo para VPS com backend e frontend](tutorial_install_vps.md), com terminal remoto, runtime separado e configuração automática das worktrees.

@@ -10,7 +10,7 @@ if (index < 0 || !process.argv[index + 1]) { console.log('node install.mjs --des
 const destination = path.resolve(process.argv[index + 1]);
 if (fs.existsSync(destination) || inside(source, destination) || inside(destination, source)) throw Error('Destino deve ser novo e fora da instalação original');
 fs.mkdirSync(destination, { recursive: true });
-for (const entry of ['contexto.mjs', 'package.json', 'install.mjs', '.gitignore', 'lib', 'tests', 'README.md', 'INSTALL.md']) {
+for (const entry of ['contexto.mjs', 'package.json', 'install.mjs', '.gitignore', 'lib', 'tests', 'README.md', 'INSTALL.md', 'tutorial_install_vps.md']) {
   const from = path.join(source, entry);
   if (fs.existsSync(from)) fs.cpSync(from, path.join(destination, entry), { recursive: true, dereference: false, filter: item => !fs.lstatSync(item).isSymbolicLink() });
 }

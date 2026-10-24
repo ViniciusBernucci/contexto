@@ -1,131 +1,136 @@
 {
-  "version": "0.2.0",
-  "provenance": "Snapshot de arquivos da distribuição, sem commit Git de release",
-  "files": [
-    {
-      "path": ".gitignore",
-      "bytes": 170,
-      "sha256": "6650542161ae7bfb52278f7f72e0bf0fa8e04a0539d181c9e7813064bf2c1f0b"
-    },
-    {
-      "path": "INSTALL.md",
-      "bytes": 10765,
-      "sha256": "1aa808a6ad821c97b8ba3d5c8ba12422e61fc483e68d7f7247afb2c9496806e6"
-    },
-    {
-      "path": "README.md",
-      "bytes": 5944,
-      "sha256": "baaa44e67c9045fdccfc64650f7337ac6781df4621fc654f60fb5355203b442e"
-    },
-    {
-      "path": "contexto.mjs",
-      "bytes": 7487,
-      "sha256": "b9bb5ef7b249e97043e0801169c90ad901dbfd6c4359a5217e8017b4c8b73603"
-    },
-    {
-      "path": "docs/METRICAS.md",
-      "bytes": 6034,
-      "sha256": "cb861d72771e3c01547dccb54c6ba6e1f1c5c628d0d8d979b401c36682e8afa1"
-    },
-    {
-      "path": "docs/TECNICA.md",
-      "bytes": 8898,
-      "sha256": "a3b268e0e3c76ef6166233649e2849f962ad1dac7e7342ac45db6fb3e5621f20"
-    },
-    {
-      "path": "docs/VALIDACAO.md",
-      "bytes": 1751,
-      "sha256": "b96daad618cae0efd2d8abe6b4eb8a6aa7d46713e2be071927de9aa7d0a1a441"
-    },
-    {
-      "path": "docs/arquitetura.candidate.json",
-      "bytes": 4634,
-      "sha256": "9b59b71e062d7e0f43754a6cff27ceae62e48f1a9be74a1d127b9b38fb5913d6"
-    },
-    {
-      "path": "docs/arquitetura.html",
-      "bytes": 824594,
-      "sha256": "3ecff04d6155e0a7668a9eeffd60f221ff60f2853975664b40e25cad0c046909"
-    },
-    {
-      "path": "docs/fluxo-ia.candidate.json",
-      "bytes": 6478,
-      "sha256": "e0e3d294e38df709cb5f4ba096ac5380fd4cf4f0f76912fe8ec19d9c922a3600"
-    },
-    {
-      "path": "docs/fluxo-ia.html",
-      "bytes": 836045,
-      "sha256": "70e1047e2c6f1241cc3db6a42db729aa9ec1aa35470b7897a6feea903a23550b"
-    },
-    {
-      "path": "install.mjs",
-      "bytes": 1976,
-      "sha256": "1c0e349217fa76c6e3cf26600cfb9a8d22e8ba403ea97c099115d36c3643cdea"
-    },
-    {
-      "path": "lib/capture.mjs",
-      "bytes": 3525,
-      "sha256": "718c9c0c9f5256ccdd2bd5f937be23948c571fe189d7ba4527a3096e8b3d59d6"
-    },
-    {
-      "path": "lib/context.mjs",
-      "bytes": 7491,
-      "sha256": "88b80eba49c19fdba394b022c95a3e99d26146412d7b9f2e92025ca1781c2af6"
-    },
-    {
-      "path": "lib/mcp.mjs",
-      "bytes": 4131,
-      "sha256": "41466405d4422be79723fcb7af670ce1f60289e39a09f5f6e170ba63f80ef0bc"
-    },
-    {
-      "path": "lib/metrics.mjs",
-      "bytes": 9971,
-      "sha256": "91180b50082a006f7d0246ccdb656c6a1dac9d58dbdefae434a62dd2b18deda7"
-    },
-    {
-      "path": "lib/safety.mjs",
-      "bytes": 4159,
-      "sha256": "515199b10347c766c9f7bb87a7022f24a3270022f16adadfd2b4971a36c6d740"
-    },
-    {
-      "path": "lib/store.mjs",
-      "bytes": 5809,
-      "sha256": "b7da4bfe61b4195a2ce64186b603fdd59e726b5261c9860a344a0ceb225f7d20"
-    },
-    {
-      "path": "lib/tasks.mjs",
-      "bytes": 14630,
-      "sha256": "b14824e76f6c190e824eb9ff805d625feb5ca5309e31daf1dbe2f1dcbbb42f12"
-    },
-    {
-      "path": "lib/transfer.mjs",
-      "bytes": 1553,
-      "sha256": "3c4304b9f266458dea826efdd3ca3a18f83b2b60133d824666288952577197de"
-    },
-    {
-      "path": "lib/worktrees.mjs",
-      "bytes": 15868,
-      "sha256": "aeb485b516ff2e089fc9b802d0c4840e0916fb4d7e8a43eab8771f6094380d50"
-    },
-    {
-      "path": "package.json",
-      "bytes": 187,
-      "sha256": "6f0bf525a1324f2ff7ec02a98b8af0cc6e78f5bb554097efb217dcaf6b99763c"
-    },
-    {
-      "path": "tests/contexto.test.mjs",
-      "bytes": 14259,
-      "sha256": "3fb1753d3326ab0df1b452c7777a49492731e78296e25c7c07e057d442a595d6"
-    },
-    {
-      "path": "tests/metrics.test.mjs",
-      "bytes": 6161,
-      "sha256": "14d5e16a038c840b098d834ecc65e91e69015698f6c0733ed2670f152eb9a300"
-    },
-    {
-      "path": "tests/worktrees.test.mjs",
-      "bytes": 8981,
-      "sha256": "c56017a2584ef50dfe1bc5b5e89d845ccccce97ba912bc4cca3c502fc9e49be3"
-    }
-  ]
+    "version":  "0.2.0",
+    "provenance":  "Snapshot de arquivos da distribuição, sem commit Git de release",
+    "files":  [
+                  {
+                      "path":  ".gitignore",
+                      "bytes":  170,
+                      "sha256":  "6650542161ae7bfb52278f7f72e0bf0fa8e04a0539d181c9e7813064bf2c1f0b"
+                  },
+                  {
+                      "path":  "contexto.mjs",
+                      "bytes":  7487,
+                      "sha256":  "b9bb5ef7b249e97043e0801169c90ad901dbfd6c4359a5217e8017b4c8b73603"
+                  },
+                  {
+                      "path":  "docs/arquitetura.candidate.json",
+                      "bytes":  4634,
+                      "sha256":  "9b59b71e062d7e0f43754a6cff27ceae62e48f1a9be74a1d127b9b38fb5913d6"
+                  },
+                  {
+                      "path":  "docs/arquitetura.html",
+                      "bytes":  824594,
+                      "sha256":  "3ecff04d6155e0a7668a9eeffd60f221ff60f2853975664b40e25cad0c046909"
+                  },
+                  {
+                      "path":  "docs/fluxo-ia.candidate.json",
+                      "bytes":  6478,
+                      "sha256":  "e0e3d294e38df709cb5f4ba096ac5380fd4cf4f0f76912fe8ec19d9c922a3600"
+                  },
+                  {
+                      "path":  "docs/fluxo-ia.html",
+                      "bytes":  836045,
+                      "sha256":  "70e1047e2c6f1241cc3db6a42db729aa9ec1aa35470b7897a6feea903a23550b"
+                  },
+                  {
+                      "path":  "docs/METRICAS.md",
+                      "bytes":  6034,
+                      "sha256":  "cb861d72771e3c01547dccb54c6ba6e1f1c5c628d0d8d979b401c36682e8afa1"
+                  },
+                  {
+                      "path":  "docs/TECNICA.md",
+                      "bytes":  8898,
+                      "sha256":  "a3b268e0e3c76ef6166233649e2849f962ad1dac7e7342ac45db6fb3e5621f20"
+                  },
+                  {
+                      "path":  "docs/VALIDACAO.md",
+                      "bytes":  1751,
+                      "sha256":  "b96daad618cae0efd2d8abe6b4eb8a6aa7d46713e2be071927de9aa7d0a1a441"
+                  },
+                  {
+                      "path":  "INSTALL.md",
+                      "bytes":  10965,
+                      "sha256":  "57975fcf654d71f68fedf89da1430fc9fd36bd1f8bf4951b8c98beed105cee1c"
+                  },
+                  {
+                      "path":  "install.mjs",
+                      "bytes":  2003,
+                      "sha256":  "942015f0df72b76c83083e940019f8c4d30a37e9e5dc17ae752d9da46264ce60"
+                  },
+                  {
+                      "path":  "lib/capture.mjs",
+                      "bytes":  3525,
+                      "sha256":  "718c9c0c9f5256ccdd2bd5f937be23948c571fe189d7ba4527a3096e8b3d59d6"
+                  },
+                  {
+                      "path":  "lib/context.mjs",
+                      "bytes":  7491,
+                      "sha256":  "88b80eba49c19fdba394b022c95a3e99d26146412d7b9f2e92025ca1781c2af6"
+                  },
+                  {
+                      "path":  "lib/mcp.mjs",
+                      "bytes":  4131,
+                      "sha256":  "41466405d4422be79723fcb7af670ce1f60289e39a09f5f6e170ba63f80ef0bc"
+                  },
+                  {
+                      "path":  "lib/metrics.mjs",
+                      "bytes":  9971,
+                      "sha256":  "91180b50082a006f7d0246ccdb656c6a1dac9d58dbdefae434a62dd2b18deda7"
+                  },
+                  {
+                      "path":  "lib/safety.mjs",
+                      "bytes":  4159,
+                      "sha256":  "515199b10347c766c9f7bb87a7022f24a3270022f16adadfd2b4971a36c6d740"
+                  },
+                  {
+                      "path":  "lib/store.mjs",
+                      "bytes":  5809,
+                      "sha256":  "b7da4bfe61b4195a2ce64186b603fdd59e726b5261c9860a344a0ceb225f7d20"
+                  },
+                  {
+                      "path":  "lib/tasks.mjs",
+                      "bytes":  14630,
+                      "sha256":  "b14824e76f6c190e824eb9ff805d625feb5ca5309e31daf1dbe2f1dcbbb42f12"
+                  },
+                  {
+                      "path":  "lib/transfer.mjs",
+                      "bytes":  1553,
+                      "sha256":  "3c4304b9f266458dea826efdd3ca3a18f83b2b60133d824666288952577197de"
+                  },
+                  {
+                      "path":  "lib/worktrees.mjs",
+                      "bytes":  15868,
+                      "sha256":  "aeb485b516ff2e089fc9b802d0c4840e0916fb4d7e8a43eab8771f6094380d50"
+                  },
+                  {
+                      "path":  "package.json",
+                      "bytes":  187,
+                      "sha256":  "6f0bf525a1324f2ff7ec02a98b8af0cc6e78f5bb554097efb217dcaf6b99763c"
+                  },
+                  {
+                      "path":  "README.md",
+                      "bytes":  6144,
+                      "sha256":  "f6afb1230b2879d5c1e04cb0cf4e20ad13b57354e11628ffb9709e6aacd80f8b"
+                  },
+                  {
+                      "path":  "tests/contexto.test.mjs",
+                      "bytes":  14259,
+                      "sha256":  "3fb1753d3326ab0df1b452c7777a49492731e78296e25c7c07e057d442a595d6"
+                  },
+                  {
+                      "path":  "tests/metrics.test.mjs",
+                      "bytes":  6161,
+                      "sha256":  "14d5e16a038c840b098d834ecc65e91e69015698f6c0733ed2670f152eb9a300"
+                  },
+                  {
+                      "path":  "tests/worktrees.test.mjs",
+                      "bytes":  8981,
+                      "sha256":  "c56017a2584ef50dfe1bc5b5e89d845ccccce97ba912bc4cca3c502fc9e49be3"
+                  },
+                  {
+                      "path":  "tutorial_install_vps.md",
+                      "bytes":  31678,
+                      "sha256":  "7a9f911786e94cc09646bf15342868bfd3effc240b95a6bd870c26eee37ce03f"
+                  }
+              ]
 }
